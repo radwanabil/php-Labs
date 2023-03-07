@@ -82,7 +82,7 @@
             <div style="color:red"></div>
 
             <label>Message</label>
-            <textarea name="message" placeholder="Type Your message" <?php echo remember_var("message")?>></textarea>
+            <textarea name="message" placeholder="Type Your message"><?php echo remember_var("message")?></textarea>
             <div style="color:red"></div>
 
             <input id="submit" name="submit" type="submit" value="Go" />
