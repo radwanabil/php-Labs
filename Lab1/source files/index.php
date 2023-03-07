@@ -3,9 +3,15 @@ require_once("config.php");
 require_once("functions.php");
 $error = "";
 if(!empty($_POST)){
-    if(empty($_POST["name"]) ||empty($_POST["email"]) || empty($_POST["message"]) ){
-        $error = "All fields are required";
-    }elseif(strlen($_POST["name"]) > MAX_NAME_LENGTH){
+    if(empty($_POST["name"])){
+        $error = "Name is required";
+    
+    }elseif(empty($_POST["email"])){
+        $error = "Email is required";
+    }elseif(empty($_POST["message"])){
+        $error = "message is required";
+    }
+    elseif(strlen($_POST["name"]) > MAX_NAME_LENGTH){
         $error = "Name must be less than less than 100 charchters";
     }elseif(!filter_var($_POST["email"],FILTER_VALIDATE_EMAIL)){
         $error = "Email is not valid";
