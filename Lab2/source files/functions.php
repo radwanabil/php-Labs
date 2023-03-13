@@ -10,6 +10,7 @@ function save_to_file()
     $fp = fopen(_Saving_File_, "a+");
     // $string_written = implode(" , ",$_POST);
     $string_written_all = date("F j Y g:i a") . " , " . $_SERVER['REMOTE_ADDR'] . " , " . $_POST["name"] . " , " . $_POST["email"] . " , " . $_POST["message"];
+    echo $string_written_all;
     fwrite($fp, $string_written_all . PHP_EOL);
     fclose($fp);
 }
