@@ -1,22 +1,22 @@
 <?php
 require_once("vendor/autoload.php");
-if(isset($_FILES['image'])){
-    $file_name = $_FILES['image']['name'];   
-    $temp_file_location = $_FILES['image']['tmp_name']; 
+if (isset($_FILES['image'])) {
+    $file_name = $_FILES['image']['name'];
+    $temp_file_location = $_FILES['image']['tmp_name'];
 
     $s3 = new Aws\S3\S3Client([
         'region'  => 'eu-west-3',
         'version' => 'latest',
         'credentials' => [
-            'key'    => "AKIAQQ64IEFSQM7BTRHY",
-            'secret' => "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",
+            'key'    => "AKIAQQ64IEFSYXZDGQQM",
+            'secret' => "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",
         ]
-    ]);		
+    ]);
 
     $result = $s3->putObject([
         'Bucket' => 'itilabphp',
         'Key'    => $file_name,
-        'SourceFile' => $temp_file_location			
+        'SourceFile' => $temp_file_location
     ]);
 
     var_dump($result);
