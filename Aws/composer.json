@@ -1,0 +1,17 @@
+{
+    "name": "php/lab3",
+    "description": "classes lecture",
+    "type": "project",
+    "require": {
+        "aws/aws-sdk-php":"*"
+    },
+    "autoload": {
+
+    },
+    "authors": [
+        {
+            "name": "radwa nabil",
+            "email": "radwaismail444@gmail.com"
+        }
+    ]
+}
