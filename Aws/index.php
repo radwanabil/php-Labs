@@ -1,5 +1,6 @@
 <?php
 require_once("vendor/autoload.php");
+require_once("config.php");
 if (isset($_FILES['image'])) {
     $file_name = $_FILES['image']['name'];
     $temp_file_location = $_FILES['image']['tmp_name'];
@@ -8,8 +9,8 @@ if (isset($_FILES['image'])) {
         'region'  => 'eu-west-3',
         'version' => 'latest',
         'credentials' => [
-            'key'    => "AKIAQQ64IEFSYXZDGQQM",
-            'secret' => "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",
+            'key'    => key,
+            'secret' => secret,
         ]
     ]);
 
